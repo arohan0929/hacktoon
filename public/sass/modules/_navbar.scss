@@ -1,0 +1,58 @@
+.nav {
+   display: grid;
+   grid-template-columns: max-content 1fr;
+   gap: 50px;
+   height: 55px;
+   place-content: center;
+   padding: 0 20px;
+
+   form {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 10px;
+      height: 40px;
+      border-radius: 7px;
+      border: 1px solid rgb(216, 216, 216);
+      box-sizing: border-box;
+      
+      &:focus-within {
+         outline: 2px solid black;
+      }
+
+   }
+
+   a {
+      display: flex;
+      place-items: center;
+      text-decoration: none;
+      color: black;
+   }
+
+}
+
+#nav-select {
+   border: none;
+   border-top-left-radius: 7px;
+   border-bottom-left-radius: 7px;
+
+   &:focus-visible {
+      outline: none;
+   }
+   option {
+      font-size: 18px;  
+   }
+}
+
+
+
+#nav-search {
+   border: none;
+   border-top-right-radius: 7px;
+   border-bottom-right-radius: 7px;
+
+   &:focus-visible {
+      outline: none;
+   }
+
+}
+
