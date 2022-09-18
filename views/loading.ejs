@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>loading...</title>
+</head>
+
+<body>
+   <%- include("partials/navbar") %>
+
+      <style>
+         .page-loading-1 {
+            animation-name: load-icon;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+         }
+
+         .page-loading-2 {
+            animation-name: load-icon;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-delay: 0.3s;
+         }
+
+         .page-loading-3 {
+            animation-name: load-icon;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-delay: 0.6s;
+         }
+
+         .page-loading-p {
+            position: relative;
+            display: flex;
+            gap: 5px;
+            place-items: end;
+         }
+
+         @keyframes load-icon {
+            from {
+               transform: translateY(-2px);
+            }
+
+            to {
+               transform: translateY(-8px);
+            }
+         }
+
+         .loading-container {
+            display: grid;
+            place-content: center;
+            height: calc(100vh - 55px - 40px);
+            font-size: 30px;
+         }
+
+         .nav {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            gap: 20px;
+            height: 55px;
+            place-content: center;
+            margin-bottom: 20px;
+         }
+
+         .nav form {
+            height: 40px;
+            border-radius: 7px;
+            border: 1px solid #d8d8d8;
+            box-sizing: border-box;
+         }
+
+         .nav a {
+            display: flex;
+            place-items: center;
+            text-decoration: none;
+            color: black;
+         }
+
+         #nav-search {
+            border: none;
+            border-radius: 7px;
+            width: 100%;
+            height: 100%;
+            padding: 0 10px;
+         }
+
+         #nav-games {
+            background-color: #232323;
+            color: white;
+            border-radius: 7px;
+            justify-content: center;
+         }
+      </style>
+
+      <div class="loading-container">
+         <p class="page-loading-p">Loading
+            <svg class="page-loading-1" width="3" height="3" viewBox="0 0 2 2" fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+               <circle cx="1" cy="1" r="1" fill="black" />
+            </svg>
+            <svg class="page-loading-2" width="3" height="3" viewBox="0 0 2 2" fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+               <circle cx="1" cy="1" r="1" fill="black" />
+            </svg>
+            <svg class="page-loading-3" width="3" height="3" viewBox="0 0 2 2" fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+               <circle cx="1" cy="1" r="1" fill="black" />
+            </svg>
+         </p>
+      </div>
+
+      <script>
+         const search = document.querySelector(".nav").querySelector("form");
+
+         search.addEventListener("submit", (e) => {
+            e.preventDefault();
+            window.location.assign(`../character/${document.getElementById("nav-search").value}`)
+         });
+
+      </script>
+
+</body>
+
+</html>

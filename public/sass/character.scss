@@ -1,11 +1,10 @@
 @use "modules/navbar";
 @use "modules/document_styles";
 
-
 #mainDiv {
    display: grid;
    gap: 10px;
-   & > a {
+	& > a {
       text-decoration: none;
       color: black;
 		display: grid;
@@ -17,5 +16,5 @@
       img {
          min-width: 300px;
       }
-   }
+	}
 }
